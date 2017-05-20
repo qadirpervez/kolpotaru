@@ -1,0 +1,82 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: #4CA1AF;
+  background: -webkit-linear-gradient(to left, #C4E0E5, #4CA1AF);
+  background: linear-gradient(to left, #C4E0E5, #4CA1AF);
+}
+
+/* Footer Register starts */
+.register-footer{
+  background: #252525;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+.register-footer p{
+  color: #f1f1f1;
+}
+.register-footer a{
+  color: #f1f1f1;
+  text-decoration: underline;
+}
+/* Footer Register ends */
+/* Seller Registration form */
+.error{
+  color: red;
+  font-size: 13px;
+}
+h1{
+  color: #39b3d7;
+}
+p{
+  color: #39b3d7;
+  font-size: 18px;
+}
+.seller-registration-form{
+  background: #f9f9f9;
+  border: 1px solid #39b3d7;
+  border-radius: 7px;
+  box-shadow: 5px 5px 7px #555;
+  padding: 20px 15px 30px 15px;
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+.seller-registration-form h3{
+  color: #39b3d7;
+  padding-left: 15px;
+}
+hr{
+  border-top: 0.05em solid #39b3d7;
+}
+h5{
+  color: #39b3d7;
+  padding-left: 18px;
+}
+h5 span{
+  color: red;
+}
+p span {
+  color: red;
+  font-size: 11px;
+  padding-left: 19px;
+}
+.seller-registration-form p{
+  color: #39b3d7;
+  font-size: 18px;
+}
+#seller-register-form input[type=text] {
+  margin-bottom: 10px;
+}
+#seller-register-form select{
+  margin-bottom: 10px;
+}
+#seller-register-form textarea {
+  margin-bottom: 10px;
+}
+#seller-register-form input[type=radio] {
+  margin-bottom: 15px;
+}
+#seller-register-form input[type=checkbox] {
+  margin-bottom: 20px;
+}
+/* Seller registration form ends */

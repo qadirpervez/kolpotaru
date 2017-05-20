@@ -26,9 +26,10 @@ class CreateSellersTable extends Migration
             $table->string('addressCity');
             $table->char('addressPin', 6);
             $table->string('mainPersonName');
-            $table->string('cantactablePersonName')->nullable();
+            $table->string('contactablePersonName')->nullable();
             $table->string('whatsappNo');
             $table->string('typeOfCompany');
+            $table->string('typeOfCompany_other')->nullable();
             $table->string('panOfProprietor');
             $table->string('panOfCompany')->nullable();
             $table->string('tinOfCompany')->nullable();

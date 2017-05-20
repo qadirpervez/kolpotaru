@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => 'web'], function() {
+  Route::resource('seller', 'SellerController');
+});
 
 Route::get('/', function () {
     return view('welcome');
