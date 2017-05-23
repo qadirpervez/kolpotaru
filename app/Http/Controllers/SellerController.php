@@ -48,7 +48,7 @@ class SellerController extends Controller
           'addressPin' => 'required|min:6|max:6',
           'panOfProprietor' => 'required|alpha_num|min:10|max:10',
           'companyName' => 'required|alpha_num|min:3|max:255',
-          'combo' => 'required|boolean',
+          'combo' => 'required',
           'description' => 'required',
           'yearsInBusiness' => 'required',
           'turnOver' => 'required',
@@ -71,7 +71,7 @@ class SellerController extends Controller
           $addressProofName =  mt_rand(1111111111111111111, 1999999999999999999) . $addressProofFile->getClientOriginalName();
           $addressProofFile->move($dest, $addressProofName);
           $documentTwo = new SellerDocument;
-          $documentTwo->documentName = $idProofName;
+          $documentTwo->documentName = $addressProofName;
           $documentTwo->save();
         }
         //save the seller
