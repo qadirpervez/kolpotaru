@@ -11,7 +11,7 @@ class SellerLoginController extends Controller
   {
     $this->middleware('guest:seller', ['except' => ['logout']]);
   }
-  protected $redirectTo = '/seller/dashboard';
+  protected $guard = 'seller';
   /**
    * Create a new controller instance.
    *

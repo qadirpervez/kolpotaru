@@ -14,6 +14,11 @@ class SellerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+      $this->middleware('guest:seller', ['except' => ['index']]);
+    }
     public function index()
     {
         return redirect()->route('seller.dashboard');
@@ -82,7 +87,7 @@ class SellerController extends Controller
         $seller->lastName = $request->lastName;
         $seller->fatherHusbandName = $request->fatherHusbandName;
         $seller->companyName = $request->companyName;
-        $seller->shopName = $request->shopName;
+        $seller->shopName = $request->shopName ? $request->shopName : $request->companyName;
         $seller->addressHouseShopNo = $request->addressHouseShopNo;
         $seller->addressStreet = $request->addressStreet;
         $seller->addressCity = $request->addressCity;
@@ -115,7 +120,8 @@ class SellerController extends Controller
         $seller->documentTwo_id = $documentTwo->id;
         $seller->save();
         //redirect with flash message
-        return redirect('home');
+        Session::flash('success', 'You are registred sucessfully, please login');
+        return redirect()->route('seller.login');
     }
 
     /**

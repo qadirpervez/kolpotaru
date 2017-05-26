@@ -10,6 +10,11 @@
    <h1 class="white-text text-center login-please">Login Please </h1>
    <div class="w3layouts_main wrap">
         <div id="parentHorizontalTab_agile">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              @include('partials._messages')
+            </div>
+          </div>
             <div class="resp-tabs-container hor_1">
                <div class="w3_agile_login">
                     <form action="{{ route('seller.login.submit')}}" method="post" class="agile_form">
@@ -20,18 +25,6 @@
 					            <input type="password" name="password" required="required" class="password" />
 					            <input type="submit" value="LogIn" class="agileinfo" />
 					          </form><div class="clearfix"></div>
-                    @if(count($errors) > 0)
-                      <div class="container-fluid">
-                        <div class="alert alert-danger">
-                          <strong>Errors:</strong>
-                          <ul>
-                          @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                          @endforeach
-                        </ul>
-                        </div>
-                      </div>
-                    @endif
                     <a href="{{ route('seller.password.request') }}" class="forgot-password">Forgot your password</a>
               </div>
             </div>

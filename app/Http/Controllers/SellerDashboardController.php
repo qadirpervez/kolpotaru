@@ -12,6 +12,6 @@ class SellerDashboardController extends Controller
     }
     public function index()
     {
-      return view('seller-dashboard');
+      return view('dashboard.seller.index');
     }
 }
