@@ -50,6 +50,7 @@ class CreateSellersTable extends Migration
             $table->text('facebookURL')->nullable();
             $table->text('linkedinURL')->nullable();
             $table->string('email');
+            $table->rememberToken();
             $table->string('password');
             $table->timestamps();
         });

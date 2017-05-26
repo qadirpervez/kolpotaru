@@ -40,14 +40,17 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+        ],
         'seller' => [
             'driver' => 'session',
             'provider' => 'sellers',
         ],
-
-        'api' => [
+        'seller-api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'sellers',
         ],
     ],
 
@@ -107,9 +110,8 @@ return [
         ],
         'sellers' => [
             'provider' => 'sellers',
-            'table' => 'seller_password_resets',
-            'expire' => 10,
+            'table' => 'password_resets',
+            'expire' => 15,
         ],
     ],
-
 ];

@@ -10,9 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['middleware' => 'web'], function() {
-  Route::resource('seller', 'SellerController');
-});
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,4 +17,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
+Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+
+Route::prefix('seller')->group(function() {
+  Route::get('/login', 'Auth\SellerLoginController@showLoginForm')->name('seller.login');
+  Route::post('/login', 'Auth\SellerLoginController@login')->name('seller.login.submit');
+  Route::get('/dashboard', 'SellerDashboardController@index')->name('seller.dashboard');
+  Route::get('/logout', 'Auth\SellerLoginController@logout')->name('seller.logout');
+
+    // Password reset routes
+    Route::post('/password/email', 'Auth\SellerForgotPasswordController@sendResetLinkEmail')->name('seller.password.email');
+    Route::get('/password/reset', 'Auth\SellerForgotPasswordController@showLinkRequestForm')->name('seller.password.request');
+    Route::post('/password/reset', 'Auth\SellerResetPasswordController@reset');
+    Route::get('/password/reset/{token}', 'Auth\SellerResetPasswordController@showResetForm')->name('seller.password.reset');
+  });
+Route::resource('seller', 'SellerController');
