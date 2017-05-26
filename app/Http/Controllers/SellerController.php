@@ -16,7 +16,7 @@ class SellerController extends Controller
      */
     public function index()
     {
-        //
+        return redirect()->route('seller.dashboard');
     }
 
     /**
