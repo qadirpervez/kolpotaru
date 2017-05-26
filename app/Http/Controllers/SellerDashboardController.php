@@ -12,6 +12,6 @@ class SellerDashboardController extends Controller
     }
     public function index()
     {
-      echo "Logged in";
+      return view('seller-dashboard');
     }
 }
