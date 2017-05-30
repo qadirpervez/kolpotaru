@@ -19,4 +19,7 @@ class Seller extends Authenticatable
     {
         $this->notify(new SellerResetPasswordNotification($token));
     }
+    public function products(){
+      return $this->hasMany('App\Product');
+    }
 }
