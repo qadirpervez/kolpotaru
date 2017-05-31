@@ -10,9 +10,12 @@ body {
   width: 100%;
 }
 #page-wrapper {
-  padding: 0 15px;
+  padding: 10px 15px;
   min-height: 568px;
   background-color: white;
+}
+.cancel-button-space{
+  margin-right: 10px;
 }
 @media (min-width: 768px) {
   #page-wrapper {

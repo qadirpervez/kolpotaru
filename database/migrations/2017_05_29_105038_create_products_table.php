@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->integer('views')->nullable();
             $table->integer('likes')->nullable();
             $table->boolean('combo');
+            $table->string('slug');
             $table->string('max_delivery_time');
             $table->integer('mini_category_id')->unsigned();
             $table->integer('seller_id')->unsigned();

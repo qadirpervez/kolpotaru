@@ -12,7 +12,7 @@
     <!-- /.navbar-header -->
 
     <ul class="nav navbar-top-links navbar-right">
-        <li class="dropdown">
+        <!-- <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
@@ -60,10 +60,11 @@
                     </a>
                 </li>
             </ul>
-            <!-- /.dropdown-messages -->
-        </li>
+
+        </li> -->
+        <!-- /.dropdown-messages -->
         <!-- /.dropdown -->
-        <li class="dropdown">
+        <!-- <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
@@ -139,8 +140,8 @@
                     </a>
                 </li>
             </ul>
-            <!-- /.dropdown-tasks -->
-        </li>
+        </li> -->
+        <!-- /.dropdown-tasks -->
         <!-- /.dropdown -->
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -236,16 +237,37 @@
                     <!-- /input-group -->
                 </li>
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="{{ route('seller.dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-th-list fa-fw"></i> Category<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="flot.html">Flot Charts</a>
+                            <a href="#"><i class="fa fa-fw fa-eye"></i> View All Main Categories</a>
                         </li>
                         <li>
-                            <a href="morris.html">Morris.js Charts</a>
+                            <a href="#"><i class="fa fa-fw fa-list"></i>Category <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="{{ route('category.create') }}"><i class="fa fa-fw fa-edit"></i> Create New</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('category.index') }}"><i class="fa fa-fw fa-eye"></i> View All</a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-list"></i> Sub Category <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="{{ route('sub_category.create') }}"><i class="fa fa-fw fa-edit"></i> Create New</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('sub_category.index') }}"><i class="fa fa-fw fa-eye"></i> View All</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-third-level -->
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
@@ -292,12 +314,6 @@
                         <li>
                             <a href="#">Third Level <span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
                                 <li>
                                     <a href="#">Third Level Item</a>
                                 </li>

@@ -11,4 +11,7 @@ class MainCategory extends Model
     public function products(){
       return $this->hasMany('App\Product');
     }
+    public function categories(){
+      return $this->hasMany('App\Category');
+    }
 }
