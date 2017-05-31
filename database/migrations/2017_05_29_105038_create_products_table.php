@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('description');
-            $table->string('seling_price');
+            $table->string('selling_price');
             $table->string('min_sell_price');
             $table->integer('quantity')->nullable();
             $table->integer('views')->nullable();

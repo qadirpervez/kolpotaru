@@ -6,11 +6,15 @@
 body {
   background-color: #f8f8f8;
 }
+.error{
+  color: red;
+  font-size: 13px;
+}
 #wrapper {
   width: 100%;
 }
 #page-wrapper {
-  padding: 10px 15px;
+  padding: 100px 15px;
   min-height: 568px;
   background-color: white;
 }
@@ -21,7 +25,7 @@ body {
   #page-wrapper {
     position: inherit;
     margin: 0 0 0 250px;
-    padding: 0 30px;
+    padding: 20px 30px 70px 30px;
     border-left: 1px solid #e7e7e7;
   }
 }

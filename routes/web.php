@@ -33,5 +33,6 @@ Route::prefix('seller')->group(function() {
     Route::get('/password/reset/{token}', 'Auth\SellerResetPasswordController@showResetForm')->name('seller.password.reset');
     Route::resource('category', 'CategoryController', ['except' => ['destroy']]);
     Route::resource('sub_category', 'SubCategoryController', ['except' => ['destroy']]);
+    Route::resource('product', 'ProductController');
   });
 Route::resource('seller', 'SellerController');

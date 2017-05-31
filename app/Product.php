@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\MainCategory;
 use App\Seller;
+use App\ProductPicture;
 
 class Product extends Model
 {
@@ -13,5 +14,8 @@ class Product extends Model
     }
     public function seller(){
       return $this->belongsTo('App\Seller');
+    }
+    public function Pictures(){
+      return $this->hasMany('App\ProductPicture');
     }
 }
