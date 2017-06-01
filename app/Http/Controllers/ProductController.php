@@ -50,12 +50,12 @@ class ProductController extends Controller
       $this->validate($request, [
           'title' => 'required|max:255',
           'slug' => 'required|alpha_dash|min:5|max:255|unique:products,slug',
-          'selling_price' => 'required|integer|max:255',
-          'min_sell_price' => 'required|integer|max:255',
-          'quantity' => 'required|integer|max:255',
-          'mini_category_id' => 'required|integer|max:255',
+          'selling_price' => 'required|integer',
+          'min_sell_price' => 'required|integer',
+          'quantity' => 'required|integer',
+          'mini_category_id' => 'required|integer',
           'combo' => 'required',
-          'max_delivery_time' => 'required|integer|max:255'
+          'max_delivery_time' => 'required|integer'
         ]);
         //save the data.
         $product = new Product;
@@ -78,7 +78,7 @@ class ProductController extends Controller
         }
         //set session and redirect
         Session::flash('success', 'The Product is sucessfully listed');
-        return redirect()->route('product.show', $product->id);
+        return redirect()->route('product.show', $product->slug);
     }
 
     /**
@@ -87,7 +87,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
         //
     }
