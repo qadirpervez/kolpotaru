@@ -34,5 +34,6 @@ Route::prefix('seller')->group(function() {
     Route::resource('category', 'CategoryController', ['except' => ['destroy']]);
     Route::resource('sub_category', 'SubCategoryController', ['except' => ['destroy']]);
     Route::resource('product', 'ProductController');
+    Route::post('product_picture', 'ProductPictureController@store')->name('product.picture.upload');
   });
 Route::resource('seller', 'SellerController');

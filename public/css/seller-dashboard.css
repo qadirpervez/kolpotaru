@@ -10,6 +10,19 @@ body {
   color: red;
   font-size: 13px;
 }
+.margin-top-time-edit{
+  margin-top: 5px;
+}
+.buttons-product-seller-dashboard-actions{
+  padding: 5px 8px;
+}
+.buttons-container-seller-dashboard{
+  padding-left: 0;
+  padding-right: 0;
+}
+.product-colors-show{
+  margin: 20px 20px 0 -16px;
+}
 #wrapper {
   width: 100%;
 }

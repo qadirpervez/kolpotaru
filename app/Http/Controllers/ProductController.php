@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\SubCategory;
 use App\Color;
 use App\Product;
+use App\ProductPicture;
 use App\ProductColor;
 use Session;
 use Auth;
@@ -89,7 +90,15 @@ class ProductController extends Controller
      */
     public function show($slug)
     {
-        //
+        $product = Product::where('id', $slug)->orWhere('slug', $slug)->first();
+        $subCategory = SubCategory::find($product->mini_category_id);
+        //find color ids
+        $colorIDS = ProductColor::where('product_id', $product->id)->get();
+        $colors = [];
+        foreach ($colorIDS as $colorID) {
+          array_push($colors, Color::find($colorID->color_id));
+        }
+        return view('dashboard.seller.product.show')->withProduct($product)->withSubcategory($subCategory)->withColors($colors);
     }
 
     /**
@@ -100,7 +109,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
