@@ -61,4 +61,17 @@ $(function(){
       }
     }
   });
+  $("#productPictureUploadForm").validate({
+    rules: {
+      description: {
+        maxlength: 40
+      },
+      main: {
+        required: true
+      },
+      productPicture: {
+        required: true
+      }
+    }
+  });
 });

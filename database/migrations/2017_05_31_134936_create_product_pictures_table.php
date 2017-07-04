@@ -17,7 +17,7 @@ class CreateProductPicturesTable extends Migration
             $table->increments('id');
             $table->text('name');
             $table->boolean('main');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->integer('product_id')->unsigned();
             $table->timestamps();
         });

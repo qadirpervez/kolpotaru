@@ -17,6 +17,7 @@ class CreateColorsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('hex_code')->nullable();
+            $table->integer('seller_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }

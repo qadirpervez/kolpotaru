@@ -7,14 +7,14 @@
 <link href="//fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
 </head>
 <body class="bg agileinfo">
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3">
+      @include('partials._messages')
+    </div>
+  </div>
    <h1 class="white-text text-center login-please">Login Please </h1>
    <div class="w3layouts_main wrap">
         <div id="parentHorizontalTab_agile">
-          <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-              @include('partials._messages')
-            </div>
-          </div>
             <div class="resp-tabs-container hor_1">
                <div class="w3_agile_login">
                     <form action="{{ route('seller.login.submit')}}" method="post" class="agile_form">

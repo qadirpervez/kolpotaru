@@ -1,9 +1,7 @@
 body{
   margin: 0;
   padding: 0;
-  background: #4CA1AF;
-  background: -webkit-linear-gradient(to left, #C4E0E5, #4CA1AF);
-  background: linear-gradient(to left, #C4E0E5, #4CA1AF);
+  background: #7f7fbf;
 }
 
 /* Footer Register starts */
@@ -26,10 +24,10 @@ body{
   font-size: 13px;
 }
 h1{
-  color: #39b3d7;
+  color: #fff;
 }
 p{
-  color: #39b3d7;
+  color: #fff;
   font-size: 18px;
 }
 .seller-registration-form{

@@ -29,7 +29,7 @@
           <h4><small>Available Colors :</small></4>
             <div class="row">
               @foreach ($colors as $color)
-                <div style="float: left; margin: 4px;"><h5><small>{{ $color->name }}</small> <span style="width: 10px; height: 10px; background-color: {{ $color->hex_code }}; color: {{ $color->hex_code }}; padding: 4px 0;">Color</span> </h5></div>
+                <div style="float: left; margin: 4px;"><h5><small>{{ $color->name }}</small> <span style="width: 10px; height: 10px; background-color: {{ $color->hex_code }}; color: {{ $color->hex_code }}; padding: 4px 0; box-shadow: 1px 1px 7px #000;">Color</span> </h5></div>
               @endforeach
             </div>
         </div>
@@ -73,18 +73,27 @@
                                   </div>
                                 </div>
                                 <div class="modal-body">
-                                  {!! Form::open(['route' => 'product.picture.upload', 'id' => 'form']) !!}
+                                  {!! Form::open(['route' => 'product.picture.upload', 'id' => 'productPictureUploadForm', 'files' => true]) !!}
 
                                   <div class="form-group">
                                     {!! Form::hidden('product_id', $product->id, ['class' => 'form-control']) !!}
                                   </div>
 
                                   <div class="form-group">
-                                    {!! Form::label('product_url', 'Affiliate Link:') !!}
-                                    {!! Form::text('product_url', null, ['class' => 'form-control', 'placeholder' => 'Affiliate Link...', 'data-parsley-required' => '', 'data-parsley-type' => 'url']) !!}
+                                    {!! Form::label('description', 'Brief Description :') !!}
+                                    {!! Form::text('description', null, ['class' => 'form-control', 'placeholder' => 'Describe it, not more then 40 characetrs']) !!}
                                   </div>
 
-
+                                  <div class="form-group">
+                                      {!! Form::label('main', 'Is this the primary picture?') !!}
+                                      {!! Form::radio('main', "true") !!} <span> Yes</span>
+                                      {!! Form::radio('main', "false") !!} <span> No</span>
+                                  </div>
+                                  <div class="form-group">
+                                      {!! Form::label('productPicture', 'Picture of the product :') !!}
+                                      {!! Form::file('productPicture', [''])!!}
+                                  </div>
+                                  <div class="clearfix"></div>
                                   <div class="form-group pull-right">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     {!! Form::submit('Upload', ['class' => 'btn btn-primary']) !!}
@@ -119,7 +128,7 @@
   </div>
 @endsection
 @section('scripts')
-    <script type="text/javascript">
-
-    </script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
+  <script src="{{ URL::asset('js/new-product-seller.js') }}"></script>
 @endsection
